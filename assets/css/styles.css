@@ -300,6 +300,11 @@ html.light .grad {
 .feature-list { display: flex; flex-direction: column; gap: 7px; margin-top: 2px; }
 .feature-list li { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--body-2); }
 .dot { width: 5px; height: 5px; border-radius: 999px; background: var(--accent); flex-shrink: 0; }
+/* Services: 2-column grid of horizontal cards (icon left, text right) */
+.grid-services { grid-template-columns: 1fr 1fr; gap: 20px; }
+.card-row { flex-direction: row; align-items: flex-start; gap: 16px; padding: 26px 24px; }
+.card-row .card-icon { flex-shrink: 0; }
+.card-body { display: flex; flex-direction: column; gap: 8px; }
 
 /* ---------- Process (fixed dark band) ---------- */
 .process {
@@ -521,7 +526,7 @@ img.avatar { object-fit: cover; }
 @media (max-width: 640px) {
   .hero-title { font-size: 34px; }
   .section-title { font-size: 28px; }
-  .grid-3, .grid-4 { grid-template-columns: 1fr; }
+  .grid-3, .grid-4, .grid-services { grid-template-columns: 1fr; }
   .form-row { grid-template-columns: 1fr; }
   .form-card { padding: 26px 18px; }
   .stats { gap: 32px; }
