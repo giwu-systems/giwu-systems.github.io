@@ -353,7 +353,15 @@
           </ul>
         </div>
 
-        <form class="form-card" id="quote-form" novalidate>
+        <!-- Netlify Forms: once deployed on Netlify, submissions are captured
+             automatically (see the site's "Forms" tab). The name, data-netlify,
+             hidden "form-name" and honeypot fields are what Netlify requires. -->
+        <form class="form-card" id="quote-form" name="quote" method="POST"
+              data-netlify="true" netlify-honeypot="bot-field" novalidate>
+          <input type="hidden" name="form-name" value="quote">
+          <p class="hp-field" hidden aria-hidden="true">
+            <label>Leave this field empty: <input name="bot-field" tabindex="-1" autocomplete="off"></label>
+          </p>
           <div class="grid form-row">
             <label class="field">Name
               <input class="input" type="text" name="name" placeholder="Your name" autocomplete="name" required>

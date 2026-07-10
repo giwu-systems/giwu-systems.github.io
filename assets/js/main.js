@@ -134,13 +134,13 @@
   window.addEventListener('resize', requestTick);
   onScroll();
 
-  /* ---------- Contact form ----------
-     No backend is wired yet. This validates the fields and shows a
-     confirmation. To make submissions actually deliver, point the form at a
-     service such as Formspree, Netlify Forms, or your own endpoint — e.g.:
-       <form action="https://formspree.io/f/xxxx" method="POST">
-     and remove the e.preventDefault() success path below.
-  ------------------------------------ */
+  /* ---------- Contact form (Netlify Forms) ----------
+     Submits to Netlify over AJAX so the inline success message stays put.
+     Netlify auto-detects the form (name="quote" + data-netlify) at deploy time
+     and collects every submission under the site's "Forms" tab — no server code.
+     Off Netlify (local preview) the POST to "/" fails; that's expected and only
+     works on the deployed site. To route elsewhere, change the fetch URL below.
+  --------------------------------------------------- */
   var form = document.getElementById('quote-form');
   if (form) {
     var status = form.querySelector('.form-status');
@@ -162,17 +162,26 @@
         return;
       }
       if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Sending…'; }
-      // Simulated success (replace with a real submit — see note above).
-      window.setTimeout(function () {
+
+      var body = new URLSearchParams(new FormData(form)).toString();
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: body
+      }).then(function (res) {
+        if (!res.ok) throw new Error('HTTP ' + res.status);
         showStatus('Request sent — thank you! We’ll reply within one business day.', 'ok');
         form.reset();
-        if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Send Request'; }
         clearTimeout(resetTimer);
         resetTimer = window.setTimeout(function () {
           // Clear text but keep the live region in the a11y tree (no display:none).
           if (status) { status.textContent = ''; status.className = 'form-status'; }
         }, 6000);
-      }, 650);
+      }).catch(function () {
+        showStatus('Sorry — something went wrong. Please email info@giwusystems.com and we’ll get right back to you.', 'err');
+      }).finally(function () {
+        if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Send Request'; }
+      });
     });
   }
 })();
