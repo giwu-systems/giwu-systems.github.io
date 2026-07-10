@@ -1,0 +1,17 @@
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+desktop.ini
+*.log
+
+# Editor / tooling config (not part of the site)
+.claude/
+.vscode/
+
+# Dependencies (this site has none, but safe to ignore)
+node_modules/
+
+# Local env / secrets — never commit tokens
+.env
+.env.*
+.netlify/
