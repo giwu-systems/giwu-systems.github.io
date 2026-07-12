@@ -1,0 +1,21 @@
+SAVE THE 3 TEAM HEADSHOTS IN THIS FOLDER
+==========================================
+
+Name them (any of .jpg / .jpeg / .png):
+
+  emmanuel   -> Emmanuel Bautista III  (Founder & CEO)
+  edward     -> Edward Octavo          (Chief Technology Officer)
+  charles    -> Charles Keith Yerro    (Chief Marketing Officer)
+
+Example: emmanuel.jpg, edward.jpg, charles.jpg
+
+TIPS
+- Square photos look best (they get cropped into a circle). ~600x600 px or larger.
+- JPG or PNG both fine.
+
+Then tell Claude "nailagay ko na ang photos" and it will:
+  - wire each photo into the team cards (perfect circle crop),
+  - keep the EB / EO / CY initials as an automatic fallback,
+  - commit + push so it goes live on its own.
+
+You can delete this note file after.
