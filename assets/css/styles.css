@@ -358,6 +358,30 @@ html.light .grad {
 img.avatar { object-fit: cover; }
 .team-name { font-size: 18px; font-weight: 700; color: var(--ink); }
 .team-dept { font-family: 'Orbitron', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 3px; color: var(--accent); }
+/* Initial avatars (swap for real headshots later: <img class="avatar" src="…" alt="Name">) */
+.avatar-initials {
+  border: none; color: #fff; letter-spacing: 1px;
+  font-family: 'Space Grotesk', sans-serif; font-size: 44px; font-weight: 700;
+}
+.avatar-1 { background: linear-gradient(140deg, #0066FF, #00B6FF); }
+.avatar-2 { background: linear-gradient(140deg, #0A4FC4, #4C8DFF); }
+.avatar-3 { background: linear-gradient(140deg, #0A84C7, #1FC7A6); }
+
+/* Process step icons */
+.step-icon {
+  width: 46px; height: 46px; border-radius: 12px; margin-bottom: 2px;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(0,182,255,0.14); color: #00B6FF;
+}
+.step-icon svg { width: 22px; height: 22px; }
+
+/* About value icons */
+.value-icon {
+  width: 46px; height: 46px; border-radius: 11px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--accent-soft); color: var(--accent);
+}
+.value-icon svg { width: 22px; height: 22px; }
 
 /* ---------- Featured quote ---------- */
 .featured-quote {
