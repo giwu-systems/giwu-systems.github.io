@@ -167,7 +167,7 @@ html.light .ico-moon { display: block; }
 .brand { display: flex; align-items: center; gap: 8px; text-decoration: none; }
 .brand img { object-fit: contain; }
 .brand-name {
-  font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, monospace; font-weight: 700; font-size: 14px;
+  font-family: 'Orbitron', sans-serif; font-weight: 700; font-size: 14px;
   letter-spacing: 2.5px; color: var(--ink); white-space: nowrap;
 }
 .brand-accent { color: var(--accent); }
@@ -482,7 +482,7 @@ img.avatar { object-fit: cover; }
 .footer-top { display: flex; justify-content: space-between; gap: 48px; flex-wrap: wrap; }
 .footer-brand { display: flex; flex-direction: column; gap: 14px; max-width: 320px; }
 .footer-brand img { object-fit: contain; }
-.footer-brand-name { font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, monospace; font-weight: 700; font-size: 15px; letter-spacing: 2px; color: var(--ink); }
+.footer-brand-name { font-family: 'Orbitron', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 2px; color: var(--ink); }
 .footer-tag { font-size: 14px; line-height: 1.7; color: var(--body); }
 .footer-motto { font-size: 11px; letter-spacing: 3px; font-weight: 600; color: var(--faint); }
 .social { display: flex; gap: 10px; margin-top: 4px; }
