@@ -627,6 +627,27 @@ img.avatar { object-fit: cover; }
 @media (max-width: 900px) { .t-grid { grid-template-columns: 1fr; } }
 @media (max-width: 640px) { .page-hero { padding: 72px 20px 48px; } .page-hero-title { font-size: 34px; } }
 
+/* ---------- Editorial "Why" section ---------- */
+.why-head { max-width: 780px; margin: 0 auto; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 16px; }
+.why-heading { font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: 46px; line-height: 1.18; color: var(--ink); text-wrap: balance; }
+.why-heading em { font-style: italic; color: var(--accent); }
+.why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.why-card {
+  background: var(--card); border: 1px solid var(--card-border); border-radius: 16px;
+  padding: 30px 28px; display: flex; flex-direction: column; gap: 12px;
+  transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+}
+.why-card:hover { transform: translateY(-4px); border-color: var(--hover-border); box-shadow: var(--hover-shadow); }
+.why-card-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px; }
+.why-icon { width: 54px; height: 54px; border-radius: 14px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; background: var(--accent-soft); color: var(--accent); }
+.why-icon svg { width: 26px; height: 26px; }
+.why-num { font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-weight: 600; font-size: 36px; line-height: 1; color: var(--accent); opacity: .75; }
+.why-title { font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: 23px; line-height: 1.2; color: var(--ink); }
+.why-sub { font-size: 14px; font-weight: 600; line-height: 1.5; color: var(--accent); }
+.why-body { font-size: 15px; line-height: 1.65; color: var(--body); text-wrap: pretty; }
+@media (max-width: 900px) { .why-grid { grid-template-columns: 1fr; } }
+@media (max-width: 640px) { .why-heading { font-size: 32px; } }
+
 /* ---------- Responsive ---------- */
 @media (max-width: 1020px) {
   .burger { display: flex; }
