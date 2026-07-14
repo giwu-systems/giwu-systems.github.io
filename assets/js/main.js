@@ -101,14 +101,10 @@
     counters.forEach(function (el) { cObs.observe(el); });
   }
 
-  /* ---------- Scroll progress + scroll-spy nav ---------- */
+  /* ---------- Scroll progress bar ----------
+     (Active nav state is set per-page in the HTML now that this is a
+     multi-page site, so there is no scroll-spy to toggle it.) */
   var progress = document.querySelector('.progress-bar');
-  var navLinks = Array.prototype.slice.call(document.querySelectorAll('.nav-link'));
-  var sections = navLinks.map(function (link) {
-    var id = (link.getAttribute('href') || '').replace('#', '');
-    if (id === 'top' || id === '') return document.querySelector('.hero');
-    return document.getElementById(id);
-  });
   var ticking = false;
   function onScroll() {
     var top = docEl.scrollTop || document.body.scrollTop;
@@ -116,14 +112,6 @@
     if (progress) {
       progress.style.width = (max > 0 ? (top / max * 100) : 0) + '%';
       progress.style.opacity = top > 4 ? '1' : '0';
-    }
-    var activeIndex = 0;
-    for (var i = 0; i < sections.length; i++) {
-      var sec = sections[i];
-      if (sec && sec.getBoundingClientRect().top <= 140) activeIndex = i;
-    }
-    for (var j = 0; j < navLinks.length; j++) {
-      navLinks[j].classList.toggle('active', j === activeIndex);
     }
     ticking = false;
   }
