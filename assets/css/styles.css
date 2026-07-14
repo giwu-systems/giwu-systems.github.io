@@ -109,9 +109,10 @@ html.light .ico-moon { display: block; }
   gap: 24px; flex-wrap: wrap;
 }
 .section-title {
-  font-family: 'Space Grotesk', sans-serif; font-weight: 700;
-  font-size: 34px; color: var(--ink); line-height: 1.2;
+  font-family: 'Playfair Display', Georgia, serif; font-weight: 700;
+  font-size: 36px; color: var(--ink); line-height: 1.22;
 }
+.section-title em { font-style: italic; color: var(--accent); }
 .section-title.on-dark { color: #EDF3FB; }
 .section-desc { font-size: 16px; line-height: 1.7; color: var(--body); text-wrap: pretty; }
 .lead { font-size: 16px; line-height: 1.7; color: var(--body); text-wrap: pretty; }
@@ -252,10 +253,11 @@ html.light .ico-moon { display: block; }
              gwPulse 4.5s ease-in-out .8s infinite;
 }
 .hero-title {
-  font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 58px;
-  line-height: 1.1; color: var(--ink); text-wrap: balance; max-width: min(760px, 100%);
+  font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: 56px;
+  line-height: 1.12; color: var(--ink); text-wrap: balance; max-width: min(760px, 100%);
 }
 .grad {
+  font-style: italic;
   background: linear-gradient(90deg, #0066FF, #00B6FF);
   -webkit-background-clip: text; background-clip: text;
   -webkit-text-fill-color: transparent; color: #00B6FF;
@@ -610,7 +612,8 @@ img.avatar { object-fit: cover; }
 /* ---------- Sub-page hero ---------- */
 .page-hero { position: relative; overflow: hidden; background: var(--bg); padding: 92px 32px 64px; }
 .page-hero .container { position: relative; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 16px; }
-.page-hero-title { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 46px; line-height: 1.1; color: var(--ink); text-wrap: balance; }
+.page-hero-title { font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: 48px; line-height: 1.14; color: var(--ink); text-wrap: balance; }
+.page-hero-title em { font-style: italic; color: var(--accent); }
 .page-hero-sub { font-size: 18px; line-height: 1.7; color: var(--body); max-width: 580px; text-wrap: pretty; }
 
 /* ---------- Testimonial cards ---------- */
