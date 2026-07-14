@@ -39,7 +39,7 @@ section, #top, #main { scroll-margin-top: 92px; }
 
 /* ---------- Theme tokens ---------- */
 :root {
-  --bg: #071120; --bg-2: #0A1D3D; --bg-footer: #050D1A;
+  --bg: #071120; --bg-2: #071120; --bg-footer: #071120;
   --header-bg: rgba(7,17,32,0.9); --menu-bg: rgba(7,17,32,0.98);
   --card: rgba(255,255,255,0.04); --card-border: rgba(255,255,255,0.09);
   --pill-bg: rgba(255,255,255,0.05); --hairline: rgba(255,255,255,0.1);
@@ -51,7 +51,7 @@ section, #top, #main { scroll-margin-top: 92px; }
   --err: #ff6b6b;
 }
 html.light {
-  --bg: #FFFFFF; --bg-2: #F4F7FB; --bg-footer: #EEF3F9;
+  --bg: #FFFFFF; --bg-2: #FFFFFF; --bg-footer: #FFFFFF;
   --header-bg: rgba(255,255,255,0.92); --menu-bg: rgba(255,255,255,0.98);
   --card: #FFFFFF; --card-border: #E1E8F2;
   --pill-bg: #F1F5FA; --hairline: #E4EAF3;
@@ -309,7 +309,7 @@ html.light .grad {
 /* ---------- Process (fixed dark band) ---------- */
 .process {
   position: relative; overflow: hidden;
-  background: linear-gradient(180deg, #0A1D3D 0%, #071120 100%);
+  background: #071120;
 }
 .process-glow {
   position: absolute; left: 50%; top: -220px; transform: translateX(-50%);
