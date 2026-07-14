@@ -185,35 +185,6 @@
     });
   }
 
-  /* ---------- ROI calculator ---------- */
-  var roiHours = document.getElementById('roi-hours');
-  if (roiHours) {
-    var roiTeam = document.getElementById('roi-team');
-    var roiRate = document.getElementById('roi-rate');
-    var roiHoursVal = document.getElementById('roi-hours-val');
-    var roiTeamVal = document.getElementById('roi-team-val');
-    var roiRateVal = document.getElementById('roi-rate-val');
-    var roiOutHours = document.getElementById('roi-out-hours');
-    var roiOutMoney = document.getElementById('roi-out-money');
-    var roiOutWeeks = document.getElementById('roi-out-weeks');
-    var pesoFmt = new Intl.NumberFormat('en-PH', { maximumFractionDigits: 0 });
-    var numFmt = new Intl.NumberFormat('en-US', { maximumFractionDigits: 0 });
-    var roiUpdate = function () {
-      var h = +roiHours.value, t = +roiTeam.value, r = +roiRate.value;
-      var savedHours = Math.round(h * t * 52 * 0.7);
-      var savedMoney = savedHours * r;
-      var weeks = Math.round(savedHours / 40);
-      roiHoursVal.textContent = h;
-      roiTeamVal.textContent = t;
-      roiRateVal.textContent = '₱' + pesoFmt.format(r);
-      roiOutHours.textContent = numFmt.format(savedHours) + ' hrs';
-      roiOutMoney.textContent = '₱' + pesoFmt.format(savedMoney);
-      roiOutWeeks.textContent = '≈ ' + numFmt.format(weeks) + ' full workweeks back';
-    };
-    [roiHours, roiTeam, roiRate].forEach(function (el) { el.addEventListener('input', roiUpdate); });
-    roiUpdate();
-  }
-
   /* ---------- Motion polish (pointer-fine + motion-OK only) ---------- */
   var fineHover = window.matchMedia &&
     window.matchMedia('(hover: hover) and (pointer: fine)').matches;
