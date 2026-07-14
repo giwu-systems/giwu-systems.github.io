@@ -73,11 +73,11 @@
           <a href="portfolio.html" class="nav-link">Portfolio</a>
           <a href="clients.html" class="nav-link">Clients</a>
         </div>
-        <a class="btn btn-primary menu-cta" href="mailto:info@giwusystems.com">Get a Quote</a>
+        <a class="btn btn-primary menu-cta" href="mailto:info@giwusystems.com" data-modal="start">Get Started</a>
       </nav>
 
       <div class="header-actions">
-        <a class="btn btn-primary nav-cta" href="mailto:info@giwusystems.com">Get a Quote</a>
+        <a class="btn btn-primary nav-cta" href="mailto:info@giwusystems.com" data-modal="start">Get Started</a>
         <button class="theme-btn" type="button" aria-label="Switch to light mode">
           <svg class="ico-sun" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"></circle><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M4.9 4.9l1.6 1.6M17.5 17.5l1.6 1.6M19.1 4.9l-1.6 1.6M6.5 17.5l-1.6 1.6"></path></svg>
           <svg class="ico-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"></path></svg>
@@ -102,11 +102,11 @@
         <span class="hero-logo-wrap">
           <img class="hero-logo" src="assets/img/logo-full.png" alt="GIWU Systems logo — a stylized G fused with an illuminated cross" width="176" height="176">
         </span>
-        <h1 id="hero-title" class="hero-title">Automate the busywork. <span class="grad">Scale the business.</span></h1>
+        <h1 id="hero-title" class="hero-title">Accelerating opportunities, <span class="grad">multiplying blessings.</span></h1>
         <p class="hero-sub">We turn repetitive, manual work into systems that run themselves.</p>
         <div class="hero-cta">
-          <a href="mailto:info@giwusystems.com" class="btn btn-gradient btn-lg">Get a Quote</a>
-          <a href="portfolio.html" class="btn btn-ghost btn-lg">See What We Automate</a>
+          <a href="mailto:info@giwusystems.com" class="btn btn-gradient btn-lg" data-modal="start">Get Started</a>
+          <a href="portfolio.html" class="btn btn-ghost btn-lg">See your Opportunity</a>
         </div>
         <div class="stats">
           <div class="stat">
@@ -123,6 +123,21 @@
           </div>
         </div>
         <p class="hero-tagline">GOD IS WITH US</p>
+      </div>
+    </section>
+
+    <!-- ===== Client logos ===== -->
+    <section class="section clients-strip reveal" aria-label="Trusted by">
+      <div class="container clients-inner">
+        <span class="eyebrow">TRUSTED BY TEAMS &amp; MINISTRIES</span>
+        <!-- Swap each .client-logo for a real client logo: <img class="client-logo" src="assets/img/clients/name.png" alt="Client name"> -->
+        <div class="clients-row">
+          <span class="client-logo" aria-hidden="true"><svg viewBox="0 0 152 40"><circle cx="20" cy="20" r="12" fill="none" stroke="currentColor" stroke-width="2.3"/><text x="46" y="26" font-family="'IBM Plex Mono', monospace" font-size="15" font-weight="600" letter-spacing="1" fill="currentColor">NORTHPEAK</text></svg></span>
+          <span class="client-logo" aria-hidden="true"><svg viewBox="0 0 152 40"><path d="M20 8 L31 30 L9 30 Z" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linejoin="round"/><text x="46" y="26" font-family="'IBM Plex Mono', monospace" font-size="15" font-weight="600" letter-spacing="1" fill="currentColor">SUMMIT</text></svg></span>
+          <span class="client-logo" aria-hidden="true"><svg viewBox="0 0 152 40"><path d="M20 8 L30 14 L30 26 L20 32 L10 26 L10 14 Z" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linejoin="round"/><text x="46" y="26" font-family="'IBM Plex Mono', monospace" font-size="15" font-weight="600" letter-spacing="1" fill="currentColor">VERTEX</text></svg></span>
+          <span class="client-logo" aria-hidden="true"><svg viewBox="0 0 152 40"><rect x="9" y="9" width="22" height="22" rx="6" fill="none" stroke="currentColor" stroke-width="2.3"/><text x="46" y="26" font-family="'IBM Plex Mono', monospace" font-size="15" font-weight="600" letter-spacing="1" fill="currentColor">GRACEWELL</text></svg></span>
+          <span class="client-logo" aria-hidden="true"><svg viewBox="0 0 152 40"><path d="M20 8 L30 20 L20 32 L10 20 Z" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linejoin="round"/><text x="46" y="26" font-family="'IBM Plex Mono', monospace" font-size="15" font-weight="600" letter-spacing="1" fill="currentColor">EVERGREEN</text></svg></span>
+        </div>
       </div>
     </section>
 
@@ -210,20 +225,29 @@
         </div>
         <div class="grid grid-3">
           <!-- Swap each .avatar for a real headshot: <img class="avatar" src="…" alt="Name"> -->
-          <article class="team-card">
-            <img class="avatar" src="assets/img/team/emmanuel.jpg" alt="" width="140" height="140" loading="lazy">
+          <article class="team-card" role="button" tabindex="0" aria-haspopup="dialog"
+            data-name="Emmanuel Bautista III" data-role="FOUNDER & CEO" data-img="assets/img/team/emmanuel.jpg"
+            data-bio="Emmanuel founded GIWU on one conviction - technology should give people their time back. He leads the vision and makes sure every system we build serves a real purpose.">
+            <img class="avatar" src="assets/img/team/emmanuel.jpg" alt="" width="160" height="160" loading="lazy">
             <h3 class="team-name">Emmanuel Bautista III</h3>
             <span class="team-dept">FOUNDER &amp; CEO</span>
+            <span class="team-more">View profile &rarr;</span>
           </article>
-          <article class="team-card">
+          <article class="team-card" role="button" tabindex="0" aria-haspopup="dialog"
+            data-name="Edward Octavo" data-role="CHIEF TECHNOLOGY OFFICER" data-img="" data-initials="EO" data-avatar-class="avatar-2"
+            data-bio="Edward architects the automations behind every GIWU project: connecting your tools, removing the manual work, and keeping everything running reliably.">
             <span class="avatar avatar-initials avatar-2" aria-hidden="true">EO</span>
             <h3 class="team-name">Edward Octavo</h3>
             <span class="team-dept">CHIEF TECHNOLOGY OFFICER</span>
+            <span class="team-more">View profile &rarr;</span>
           </article>
-          <article class="team-card">
-            <img class="avatar" src="assets/img/team/charles.jpg" alt="" width="140" height="140" loading="lazy">
+          <article class="team-card" role="button" tabindex="0" aria-haspopup="dialog"
+            data-name="Charles Keith Yerro" data-role="CHIEF MARKETING OFFICER" data-img="assets/img/team/charles.jpg"
+            data-bio="Charles bridges GIWU's work and the businesses that need it, so the right teams discover how much time automation can give back.">
+            <img class="avatar" src="assets/img/team/charles.jpg" alt="" width="160" height="160" loading="lazy">
             <h3 class="team-name">Charles Keith Yerro</h3>
             <span class="team-dept">CHIEF MARKETING OFFICER</span>
+            <span class="team-more">View profile &rarr;</span>
           </article>
         </div>
       </div>
@@ -235,7 +259,7 @@
         <span class="eyebrow">READY TO AUTOMATE?</span>
         <h2 id="cta-final-title" class="cta-final-title">Let&rsquo;s build your <em>automation machine.</em></h2>
         <p class="cta-final-sub">A free 30-minute audit &mdash; we&rsquo;ll map exactly what you can automate and the hours you&rsquo;d save. No obligation.</p>
-        <a href="mailto:info@giwusystems.com?subject=Free%20Automation%20Audit" class="btn btn-gradient btn-lg cta-final-btn">Book a Free Automation Audit</a>
+        <a href="mailto:info@giwusystems.com?subject=Free%20Automation%20Audit" class="btn btn-gradient btn-lg cta-final-btn" data-modal="start">Book a Free Automation Audit</a>
       </div>
     </section>
 
@@ -286,11 +310,49 @@
         <span>&copy; 2026 GIWU Systems, Inc. All rights reserved.</span>
         <div class="footer-bottom-links">
           <a href="#top">Back to top <span aria-hidden="true">&uarr;</span></a>
-          <a href="mailto:info@giwusystems.com">Get a Quote</a>
+          <a href="mailto:info@giwusystems.com" data-modal="start">Get Started</a>
         </div>
       </div>
     </div>
   </footer>
+
+  <!-- ===== Get Started modal ===== -->
+  <div class="modal" id="start-modal" role="dialog" aria-modal="true" aria-labelledby="sm-title">
+    <div class="modal-panel">
+      <button class="modal-close" type="button" aria-label="Close">&times;</button>
+      <span class="eyebrow">GET STARTED</span>
+      <h3 class="modal-title" id="sm-title">Tell us about your <em>opportunity</em></h3>
+      <p class="modal-sub">Fill this out and we&rsquo;ll map exactly what you can automate &mdash; free, no obligation.</p>
+      <form class="start-form" id="start-form" novalidate>
+        <label class="field">Name
+          <input class="input" type="text" name="name" autocomplete="name" required>
+        </label>
+        <label class="field">Email
+          <input class="input" type="email" name="email" autocomplete="email" required>
+        </label>
+        <label class="field">Company / Organization
+          <input class="input" type="text" name="org" autocomplete="organization">
+        </label>
+        <label class="field">What do you want to automate?
+          <textarea class="input textarea" name="message" rows="4" required></textarea>
+        </label>
+        <button class="btn btn-gradient btn-lg" type="submit">Send Application</button>
+        <p class="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+
+  <!-- ===== Team member modal ===== -->
+  <div class="modal" id="team-modal" role="dialog" aria-modal="true" aria-labelledby="tm-name">
+    <div class="modal-panel modal-team">
+      <button class="modal-close" type="button" aria-label="Close">&times;</button>
+      <div class="tm-avatar" id="tm-avatar"></div>
+      <h3 class="tm-name" id="tm-name"></h3>
+      <span class="team-dept" id="tm-role"></span>
+      <p class="tm-bio" id="tm-bio"></p>
+      <a class="btn btn-gradient btn-lg tm-contact" href="mailto:info@giwusystems.com">Get in touch</a>
+    </div>
+  </div>
 
   <script src="assets/js/main.js" defer></script>
 </body>

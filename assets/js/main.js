@@ -212,3 +212,80 @@
     }
   }
 })();
+
+/* ============================================================
+   Modals — "Get Started" application form + Team profiles
+   ============================================================ */
+(function () {
+  'use strict';
+  var openM = null;
+  function open(m) {
+    if (!m) return;
+    m.classList.add('open');
+    openM = m;
+    document.body.style.overflow = 'hidden';
+    var focusable = m.querySelector('input, textarea, .modal-close');
+    if (focusable) window.setTimeout(function () { focusable.focus(); }, 40);
+  }
+  function close() {
+    if (!openM) return;
+    openM.classList.remove('open');
+    document.body.style.overflow = '';
+    openM = null;
+  }
+
+  // Open the Get Started application modal
+  Array.prototype.forEach.call(document.querySelectorAll('[data-modal="start"]'), function (el) {
+    el.addEventListener('click', function (e) { e.preventDefault(); open(document.getElementById('start-modal')); });
+  });
+
+  // Team cards -> profile modal
+  var teamModal = document.getElementById('team-modal');
+  if (teamModal) {
+    Array.prototype.forEach.call(document.querySelectorAll('.team-card[data-name]'), function (card) {
+      var show = function () {
+        var img = card.getAttribute('data-img');
+        document.getElementById('tm-avatar').innerHTML = img
+          ? '<img class="avatar" src="' + img + '" alt="">'
+          : '<span class="avatar avatar-initials ' + (card.getAttribute('data-avatar-class') || '') + '">' + (card.getAttribute('data-initials') || '') + '</span>';
+        document.getElementById('tm-name').textContent = card.getAttribute('data-name');
+        document.getElementById('tm-role').textContent = card.getAttribute('data-role');
+        document.getElementById('tm-bio').textContent = card.getAttribute('data-bio');
+        open(teamModal);
+      };
+      card.addEventListener('click', show);
+      card.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar') { e.preventDefault(); show(); }
+      });
+    });
+  }
+
+  // Close: backdrop click, X button, Escape
+  Array.prototype.forEach.call(document.querySelectorAll('.modal'), function (m) {
+    m.addEventListener('click', function (e) { if (e.target === m) close(); });
+    var x = m.querySelector('.modal-close');
+    if (x) x.addEventListener('click', close);
+  });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
+
+  // Application form submit -> compose an email (no backend on GitHub Pages)
+  var sf = document.getElementById('start-form');
+  if (sf) {
+    var status = sf.querySelector('.form-status');
+    sf.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (!sf.checkValidity()) {
+        if (status) { status.textContent = 'Please fill in the required fields with a valid email.'; status.className = 'form-status err'; }
+        var fi = sf.querySelector(':invalid'); if (fi) fi.focus();
+        return;
+      }
+      var d = new FormData(sf);
+      var body = 'Name: ' + d.get('name') + '\nEmail: ' + d.get('email') +
+        '\nCompany: ' + (d.get('org') || '-') + '\n\nWhat to automate:\n' + d.get('message');
+      var mail = 'mailto:info@giwusystems.com?subject=' +
+        encodeURIComponent('New inquiry - ' + d.get('name')) + '&body=' + encodeURIComponent(body);
+      if (status) { status.textContent = 'Opening your email app to send your application…'; status.className = 'form-status ok'; }
+      window.location.href = mail;
+    });
+  }
+})();

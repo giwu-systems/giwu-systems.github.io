@@ -63,11 +63,11 @@
           <a href="portfolio.html" class="nav-link active" aria-current="page">Portfolio</a>
           <a href="clients.html" class="nav-link">Clients</a>
         </div>
-        <a class="btn btn-primary menu-cta" href="mailto:info@giwusystems.com">Get a Quote</a>
+        <a class="btn btn-primary menu-cta" href="mailto:info@giwusystems.com" data-modal="start">Get Started</a>
       </nav>
 
       <div class="header-actions">
-        <a class="btn btn-primary nav-cta" href="mailto:info@giwusystems.com">Get a Quote</a>
+        <a class="btn btn-primary nav-cta" href="mailto:info@giwusystems.com" data-modal="start">Get Started</a>
         <button class="theme-btn" type="button" aria-label="Switch to light mode">
           <svg class="ico-sun" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"></circle><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M4.9 4.9l1.6 1.6M17.5 17.5l1.6 1.6M19.1 4.9l-1.6 1.6M6.5 17.5l-1.6 1.6"></path></svg>
           <svg class="ico-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"></path></svg>
@@ -214,7 +214,7 @@
         <span class="eyebrow">READY TO AUTOMATE?</span>
         <h2 id="cta-final-title" class="cta-final-title">Let&rsquo;s build your <em>automation machine.</em></h2>
         <p class="cta-final-sub">A free 30-minute audit &mdash; we&rsquo;ll map exactly what you can automate and the hours you&rsquo;d save. No obligation.</p>
-        <a href="mailto:info@giwusystems.com?subject=Free%20Automation%20Audit" class="btn btn-gradient btn-lg cta-final-btn">Book a Free Automation Audit</a>
+        <a href="mailto:info@giwusystems.com?subject=Free%20Automation%20Audit" class="btn btn-gradient btn-lg cta-final-btn" data-modal="start">Book a Free Automation Audit</a>
       </div>
     </section>
 
@@ -265,11 +265,37 @@
         <span>&copy; 2026 GIWU Systems, Inc. All rights reserved.</span>
         <div class="footer-bottom-links">
           <a href="#top">Back to top <span aria-hidden="true">&uarr;</span></a>
-          <a href="mailto:info@giwusystems.com">Get a Quote</a>
+          <a href="mailto:info@giwusystems.com" data-modal="start">Get Started</a>
         </div>
       </div>
     </div>
   </footer>
+
+  <!-- ===== Get Started modal ===== -->
+  <div class="modal" id="start-modal" role="dialog" aria-modal="true" aria-labelledby="sm-title">
+    <div class="modal-panel">
+      <button class="modal-close" type="button" aria-label="Close">&times;</button>
+      <span class="eyebrow">GET STARTED</span>
+      <h3 class="modal-title" id="sm-title">Tell us about your <em>opportunity</em></h3>
+      <p class="modal-sub">Fill this out and we&rsquo;ll map exactly what you can automate &mdash; free, no obligation.</p>
+      <form class="start-form" id="start-form" novalidate>
+        <label class="field">Name
+          <input class="input" type="text" name="name" autocomplete="name" required>
+        </label>
+        <label class="field">Email
+          <input class="input" type="email" name="email" autocomplete="email" required>
+        </label>
+        <label class="field">Company / Organization
+          <input class="input" type="text" name="org" autocomplete="organization">
+        </label>
+        <label class="field">What do you want to automate?
+          <textarea class="input textarea" name="message" rows="4" required></textarea>
+        </label>
+        <button class="btn btn-gradient btn-lg" type="submit">Send Application</button>
+        <p class="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
 
   <script src="assets/js/main.js" defer></script>
 </body>
