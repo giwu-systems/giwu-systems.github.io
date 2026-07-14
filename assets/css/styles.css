@@ -10,7 +10,7 @@ html { scroll-behavior: smooth; }
 body {
   background: var(--bg);
   color: var(--ink);
-  font-family: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   overflow-x: hidden;
@@ -94,12 +94,12 @@ html.light .ico-moon { display: block; }
 .grid-4 { grid-template-columns: repeat(4, 1fr); gap: 20px; }
 
 .eyebrow {
-  font-family: 'Orbitron', sans-serif; font-size: 11px; font-weight: 700;
+  font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, monospace; font-size: 11px; font-weight: 700;
   letter-spacing: 5px; color: var(--accent);
 }
 .eyebrow-cyan { color: #00B6FF; }
 .micro-label {
-  font-family: 'Orbitron', sans-serif; font-size: 11px; font-weight: 700;
+  font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, monospace; font-size: 11px; font-weight: 700;
   letter-spacing: 5px; color: var(--faint);
 }
 .section-head { display: flex; flex-direction: column; gap: 14px; max-width: 640px; }
@@ -109,7 +109,7 @@ html.light .ico-moon { display: block; }
   gap: 24px; flex-wrap: wrap;
 }
 .section-title {
-  font-family: 'Playfair Display', Georgia, serif; font-weight: 700;
+  font-family: 'Fraunces', Georgia, serif; font-weight: 700;
   font-size: 36px; color: var(--ink); line-height: 1.22;
 }
 .section-title em { font-style: italic; color: var(--accent); }
@@ -167,7 +167,7 @@ html.light .ico-moon { display: block; }
 .brand { display: flex; align-items: center; gap: 8px; text-decoration: none; }
 .brand img { object-fit: contain; }
 .brand-name {
-  font-family: 'Orbitron', sans-serif; font-weight: 700; font-size: 14px;
+  font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, monospace; font-weight: 700; font-size: 14px;
   letter-spacing: 2.5px; color: var(--ink); white-space: nowrap;
 }
 .brand-accent { color: var(--accent); }
@@ -253,7 +253,7 @@ html.light .ico-moon { display: block; }
              gwPulse 4.5s ease-in-out .8s infinite;
 }
 .hero-title {
-  font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: 56px;
+  font-family: 'Fraunces', Georgia, serif; font-weight: 700; font-size: 56px;
   line-height: 1.12; color: var(--ink); text-wrap: balance; max-width: min(760px, 100%);
 }
 .grad {
@@ -271,7 +271,7 @@ html.light .grad {
 .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; margin-top: 8px; max-width: 100%; }
 .stats { display: flex; gap: 56px; justify-content: center; flex-wrap: wrap; margin-top: 18px; max-width: 100%; }
 .stat { display: flex; flex-direction: column; gap: 4px; align-items: center; }
-.stat-num { font-family: 'Space Grotesk', sans-serif; font-size: 30px; font-weight: 700; color: var(--ink); }
+.stat-num { font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, monospace; font-size: 28px; font-weight: 600; color: var(--ink); font-variant-numeric: tabular-nums; }
 .stat-label { font-size: 12.5px; color: var(--faint); letter-spacing: 2px; font-weight: 600; }
 .hero-tagline { font-size: 12px; letter-spacing: 4px; font-weight: 600; color: var(--faint); margin-top: 4px; }
 
@@ -354,11 +354,11 @@ html.light .grad {
 }
 img.avatar { object-fit: cover; }
 .team-name { font-size: 18px; font-weight: 700; color: var(--ink); }
-.team-dept { font-family: 'Orbitron', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 3px; color: var(--accent); }
+.team-dept { font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, monospace; font-size: 10px; font-weight: 700; letter-spacing: 3px; color: var(--accent); }
 /* Initial avatars (swap for real headshots later: <img class="avatar" src="…" alt="Name">) */
 .avatar-initials {
   border: none; color: #fff; letter-spacing: 1px;
-  font-family: 'Space Grotesk', sans-serif; font-size: 44px; font-weight: 700;
+  font-family: 'Fraunces', Georgia, serif; font-size: 44px; font-weight: 600;
 }
 .avatar-1 { background: linear-gradient(140deg, #0066FF, #00B6FF); }
 .avatar-2 { background: linear-gradient(140deg, #0A4FC4, #4C8DFF); }
@@ -385,9 +385,9 @@ img.avatar { object-fit: cover; }
   max-width: 860px; display: flex; flex-direction: column; align-items: center;
   text-align: center; gap: 20px;
 }
-.quote-mark { font-family: 'Space Grotesk', sans-serif; font-size: 52px; font-weight: 700; color: var(--accent); line-height: 1; }
+.quote-mark { font-family: 'Fraunces', Georgia, serif; font-size: 56px; font-weight: 600; color: var(--accent); line-height: 1; }
 .quote-text {
-  font-family: 'Space Grotesk', sans-serif; font-size: 27px; line-height: 1.5;
+  font-family: 'Fraunces', Georgia, serif; font-style: italic; font-size: 28px; line-height: 1.5;
   color: var(--ink); font-weight: 500; text-wrap: balance; max-width: 100%;
 }
 .quote-attr { font-size: 14px; color: var(--faint); font-style: normal; }
@@ -428,7 +428,7 @@ img.avatar { object-fit: cover; }
 .form-row { grid-template-columns: 1fr 1fr; gap: 18px; }
 .field { display: flex; flex-direction: column; gap: 8px; font-size: 13px; font-weight: 600; color: var(--body-2); }
 .input {
-  font-family: 'Manrope', sans-serif; font-size: 14px; padding: 13px 14px;
+  font-family: 'Inter', sans-serif; font-size: 14px; padding: 13px 14px;
   border: 1px solid var(--input-border); border-radius: 6px;
   background: var(--input-bg); color: var(--ink); outline: none;
   transition: border-color .2s ease, box-shadow .2s ease;
@@ -482,7 +482,7 @@ img.avatar { object-fit: cover; }
 .footer-top { display: flex; justify-content: space-between; gap: 48px; flex-wrap: wrap; }
 .footer-brand { display: flex; flex-direction: column; gap: 14px; max-width: 320px; }
 .footer-brand img { object-fit: contain; }
-.footer-brand-name { font-family: 'Orbitron', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 2px; color: var(--ink); }
+.footer-brand-name { font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, monospace; font-weight: 700; font-size: 15px; letter-spacing: 2px; color: var(--ink); }
 .footer-tag { font-size: 14px; line-height: 1.7; color: var(--body); }
 .footer-motto { font-size: 11px; letter-spacing: 3px; font-weight: 600; color: var(--faint); }
 .social { display: flex; gap: 10px; margin-top: 4px; }
@@ -595,7 +595,7 @@ img.avatar { object-fit: cover; }
 .ba-grid { display: grid; grid-template-columns: 1fr auto 1fr; gap: 20px; align-items: center; }
 .ba-card { border-radius: 16px; padding: 30px 28px; border: 1px solid var(--card-border); background: var(--card); }
 .ba-after { position: relative; overflow: hidden; border-color: var(--hover-border); background: linear-gradient(160deg, rgba(0,102,255,0.10), var(--card)); box-shadow: var(--hover-shadow); }
-.ba-tag { display: inline-block; font-family: 'Orbitron', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 3px; padding: 6px 12px; border-radius: 999px; margin-bottom: 20px; }
+.ba-tag { display: inline-block; font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, monospace; font-size: 10px; font-weight: 700; letter-spacing: 3px; padding: 6px 12px; border-radius: 999px; margin-bottom: 20px; }
 .ba-tag-before { color: #ff8a8a; background: rgba(255,107,107,0.12); }
 .ba-tag-after { color: var(--accent); background: var(--accent-soft); }
 .ba-list { display: flex; flex-direction: column; gap: 14px; }
@@ -612,7 +612,7 @@ img.avatar { object-fit: cover; }
 /* ---------- Sub-page hero ---------- */
 .page-hero { position: relative; overflow: hidden; background: var(--bg); padding: 92px 32px 64px; }
 .page-hero .container { position: relative; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 16px; }
-.page-hero-title { font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: 48px; line-height: 1.14; color: var(--ink); text-wrap: balance; }
+.page-hero-title { font-family: 'Fraunces', Georgia, serif; font-weight: 700; font-size: 48px; line-height: 1.14; color: var(--ink); text-wrap: balance; }
 .page-hero-title em { font-style: italic; color: var(--accent); }
 .page-hero-sub { font-size: 18px; line-height: 1.7; color: var(--body); max-width: 580px; text-wrap: pretty; }
 
@@ -632,7 +632,7 @@ img.avatar { object-fit: cover; }
 
 /* ---------- Editorial "Why" section ---------- */
 .why-head { max-width: 780px; margin: 0 auto; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 16px; }
-.why-heading { font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: 46px; line-height: 1.18; color: var(--ink); text-wrap: balance; }
+.why-heading { font-family: 'Fraunces', Georgia, serif; font-weight: 700; font-size: 46px; line-height: 1.18; color: var(--ink); text-wrap: balance; }
 .why-heading em { font-style: italic; color: var(--accent); }
 .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 .why-card {
@@ -644,8 +644,8 @@ img.avatar { object-fit: cover; }
 .why-card-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px; }
 .why-icon { width: 54px; height: 54px; border-radius: 14px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; background: var(--accent-soft); color: var(--accent); }
 .why-icon svg { width: 26px; height: 26px; }
-.why-num { font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-weight: 600; font-size: 36px; line-height: 1; color: var(--accent); opacity: .75; }
-.why-title { font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: 23px; line-height: 1.2; color: var(--ink); }
+.why-num { font-family: 'Fraunces', Georgia, serif; font-style: italic; font-weight: 600; font-size: 36px; line-height: 1; color: var(--accent); opacity: .75; }
+.why-title { font-family: 'Fraunces', Georgia, serif; font-weight: 700; font-size: 23px; line-height: 1.2; color: var(--ink); }
 .why-sub { font-size: 14px; font-weight: 600; line-height: 1.5; color: var(--accent); }
 .why-body { font-size: 15px; line-height: 1.65; color: var(--body); text-wrap: pretty; }
 @media (max-width: 900px) { .why-grid { grid-template-columns: 1fr; } }
@@ -653,7 +653,7 @@ img.avatar { object-fit: cover; }
 
 /* ---------- Final CTA ---------- */
 .cta-final-inner { max-width: 720px; margin: 0 auto; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 18px; }
-.cta-final-title { font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: 44px; line-height: 1.15; color: var(--ink); text-wrap: balance; }
+.cta-final-title { font-family: 'Fraunces', Georgia, serif; font-weight: 700; font-size: 44px; line-height: 1.15; color: var(--ink); text-wrap: balance; }
 .cta-final-title em { font-style: italic; color: var(--accent); }
 .cta-final-sub { font-size: 16px; line-height: 1.7; color: var(--body); max-width: 560px; text-wrap: pretty; }
 .cta-final-btn { margin-top: 8px; }
