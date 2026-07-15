@@ -1,23 +1,27 @@
 PUT THE PARTNER / CLIENT LOGOS IN THIS FOLDER
 ==============================================
 
-Just drop the logo files here, then tell Claude and it will wire them into the
+Drop the logo files here, then tell Claude and it will wire them into the
 "TRUSTED BY BRANDS & BUSINESS OWNERS" strip on the homepage.
 
-BEST FORMAT
-- PNG with a TRANSPARENT background (or SVG) — this looks cleanest.
-- Any reasonable size; height ~200px+ is plenty. They are displayed at 34px tall.
-- Name them after the brand, e.g.  acme.png, brandname.png, partner-x.svg
+NAME THE FILE AFTER THE BRAND
+- The FILENAME becomes the name shown beside the logo on the website.
+    BrandFoundry.png  ->  BrandFoundry
+    StratosCore.jpg   ->  StratosCore
+    zenOS.jpg         ->  zenOS
+- So spell/capitalise it exactly how the brand should appear.
 
-COLOR
-- You do NOT need to convert anything to black & white.
-  The site automatically renders them GRAYSCALE (black & white) so every logo
-  matches the dark theme, and lifts slightly on hover.
-- Send them in their normal/original colours — the website handles the rest.
+FORMAT & COLOUR
+- Any format (PNG / JPG / SVG), any size. Height ~200px+ is plenty.
+- Send them in their normal/original colours — no need to edit anything.
+- Every logo is baked into a clean WHITE-ON-TRANSPARENT mark so the strip stays
+  black & white and consistent (and flips to black automatically in light mode).
+  Both kinds of source work: dark logo on white, or light logo on black.
 
-TIP
-- Logos that are pure black may look dim on the dark background. If you have a
-  white or light version of a logo, send that one instead.
+NOTE
+- Very detailed/illustrated logos turn to mush at ~38px tall. A simple mark or
+  monogram always reads best. If you have a simplified version, send that one.
 
-Then say: "nailagay ko na ang logos" and Claude will swap out the placeholders.
-You can delete this note afterwards.
+Then say: "nailagay ko na ang logos" and Claude will add them to the strip.
+
+Currently live: BrandFoundry, StratosCore, zenOS.

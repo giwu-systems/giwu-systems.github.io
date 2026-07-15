@@ -673,17 +673,21 @@ img.avatar { object-fit: cover; }
 
 /* ---------- Client logos ---------- */
 .clients-inner { display: flex; flex-direction: column; align-items: center; gap: 26px; text-align: center; }
-.clients-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 20px 44px; }
-.client-logo { color: var(--faint); opacity: .68; transition: opacity .25s ease, color .25s ease; }
+.clients-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 22px 48px; }
+/* Each entry is the logo mark plus the brand name beside it. The marks are baked
+   to white-on-transparent (see scratchpad logos_bw.py), so they stay black & white
+   on the dark theme and are inverted to black for light mode. */
+.client-logo { display: inline-flex; align-items: center; gap: 12px; color: var(--faint); opacity: .8; transition: opacity .25s ease, color .25s ease; }
 .client-logo:hover { opacity: 1; color: var(--body-2); }
 .client-logo svg { height: 30px; width: auto; display: block; }
-/* Partner/client logos are shown black & white (grayscale) on the dark theme;
-   hover just lifts them a little — they stay B&W. Swap `filter: none` on hover
-   if you ever want full colour to reveal on hover instead. */
-img.client-logo { height: 34px; width: auto; filter: grayscale(1) brightness(1.85) contrast(1.05); opacity: .62; transition: opacity .25s ease, filter .25s ease; }
-img.client-logo:hover { opacity: 1; filter: grayscale(1) brightness(2.15) contrast(1.05); }
-html.light img.client-logo { filter: grayscale(1) contrast(1.05); opacity: .55; }
-html.light img.client-logo:hover { opacity: 1; filter: grayscale(1) contrast(1.05); }
+.client-mark { height: 38px; width: auto; display: block; flex: none; }
+html.light .client-mark { filter: invert(1); }
+.client-name { font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, monospace; font-size: 14px; font-weight: 600; letter-spacing: 1px; white-space: nowrap; }
+@media (max-width: 640px) {
+  .clients-row { gap: 18px 30px; }
+  .client-mark { height: 30px; }
+  .client-name { font-size: 12px; letter-spacing: .6px; }
+}
 
 /* ---------- Bigger, clickable team cards ---------- */
 .avatar { width: 160px; height: 160px; }
