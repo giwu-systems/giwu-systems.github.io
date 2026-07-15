@@ -677,8 +677,13 @@ img.avatar { object-fit: cover; }
 .client-logo { color: var(--faint); opacity: .68; transition: opacity .25s ease, color .25s ease; }
 .client-logo:hover { opacity: 1; color: var(--body-2); }
 .client-logo svg { height: 30px; width: auto; display: block; }
-img.client-logo { height: 30px; width: auto; filter: grayscale(1) brightness(1.7); opacity: .6; transition: opacity .25s ease, filter .25s ease; }
-img.client-logo:hover { opacity: 1; filter: none; }
+/* Partner/client logos are shown black & white (grayscale) on the dark theme;
+   hover just lifts them a little — they stay B&W. Swap `filter: none` on hover
+   if you ever want full colour to reveal on hover instead. */
+img.client-logo { height: 34px; width: auto; filter: grayscale(1) brightness(1.85) contrast(1.05); opacity: .62; transition: opacity .25s ease, filter .25s ease; }
+img.client-logo:hover { opacity: 1; filter: grayscale(1) brightness(2.15) contrast(1.05); }
+html.light img.client-logo { filter: grayscale(1) contrast(1.05); opacity: .55; }
+html.light img.client-logo:hover { opacity: 1; filter: grayscale(1) contrast(1.05); }
 
 /* ---------- Bigger, clickable team cards ---------- */
 .avatar { width: 160px; height: 160px; }
