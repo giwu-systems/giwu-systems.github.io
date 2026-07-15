@@ -239,18 +239,82 @@
     el.addEventListener('click', function (e) { e.preventDefault(); open(document.getElementById('start-modal')); });
   });
 
-  // Team cards -> profile modal
+  // Team cards -> profile modal (photo gallery + social links)
   var teamModal = document.getElementById('team-modal');
   if (teamModal) {
+    var avatarBox = document.getElementById('tm-avatar');
+    var dotsBox = document.getElementById('tm-dots');
+    var socialsBox = document.getElementById('tm-socials');
+    var ICON = {
+      li: '<svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.5 8.5H3.4V21h3.1V8.5zM4.9 7.1a1.85 1.85 0 1 0 0-3.7 1.85 1.85 0 0 0 0 3.7zM21 13.9c0-3.4-1.8-5-4.2-5-1.9 0-2.8 1-3.3 1.8V8.5h-3.1V21h3.1v-6.2c0-1.6.7-2.6 2.1-2.6 1.3 0 1.9.9 1.9 2.6V21H21v-7.1z"></path></svg>',
+      fb: '<svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 22v-8.1h2.7l.4-3.1h-3.1V8.8c0-.9.25-1.5 1.55-1.5h1.65V4.5c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.45-4 4.1v2.3H7.6v3.1h2.7V22h3.2z"></path></svg>',
+      ig: '<svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"></rect><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"></circle><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor"></circle></svg>'
+    };
+    var LABEL = { li: 'LinkedIn', fb: 'Facebook', ig: 'Instagram' };
+
     Array.prototype.forEach.call(document.querySelectorAll('.team-card[data-name]'), function (card) {
       var show = function () {
-        var img = card.getAttribute('data-img');
-        document.getElementById('tm-avatar').innerHTML = img
-          ? '<img class="avatar" src="' + img + '" alt="">'
-          : '<span class="avatar avatar-initials ' + (card.getAttribute('data-avatar-class') || '') + '">' + (card.getAttribute('data-initials') || '') + '</span>';
-        document.getElementById('tm-name').textContent = card.getAttribute('data-name');
+        var name = card.getAttribute('data-name');
+        var imgs = (card.getAttribute('data-imgs') || '').split(',')
+          .map(function (x) { return x.trim(); }).filter(Boolean);
+        var idx = 0;
+
+        function render(initial) {
+          if (!imgs.length) {
+            avatarBox.innerHTML = '<span class="avatar avatar-initials ' +
+              (card.getAttribute('data-avatar-class') || '') + '">' +
+              (card.getAttribute('data-initials') || '') + '</span>';
+            return;
+          }
+          var cur = avatarBox.querySelector('img');
+          if (initial || !cur) {
+            avatarBox.innerHTML = '<img class="avatar" src="' + imgs[idx] + '" alt="' + name + '">';
+          } else {
+            cur.style.opacity = '0';
+            window.setTimeout(function () { cur.src = imgs[idx]; cur.style.opacity = '1'; }, 180);
+          }
+          Array.prototype.forEach.call(dotsBox.children, function (d, i) {
+            d.classList.toggle('active', i === idx);
+          });
+        }
+
+        // Photo dots — only when the member has more than one photo
+        dotsBox.innerHTML = '';
+        avatarBox.classList.toggle('has-more', imgs.length > 1);
+        if (imgs.length > 1) {
+          imgs.forEach(function (_, i) {
+            var d = document.createElement('button');
+            d.type = 'button';
+            d.className = 'tm-dot' + (i === 0 ? ' active' : '');
+            d.setAttribute('aria-label', 'Photo ' + (i + 1) + ' of ' + imgs.length);
+            d.addEventListener('click', function () { idx = i; render(false); });
+            dotsBox.appendChild(d);
+          });
+        }
+        // Click the photo to cycle to the next one
+        avatarBox.onclick = imgs.length > 1
+          ? function () { idx = (idx + 1) % imgs.length; render(false); }
+          : null;
+
+        render(true);
+        document.getElementById('tm-name').textContent = name;
         document.getElementById('tm-role').textContent = card.getAttribute('data-role');
         document.getElementById('tm-bio').textContent = card.getAttribute('data-bio');
+
+        // Social links
+        socialsBox.innerHTML = '';
+        ['li', 'fb', 'ig'].forEach(function (k) {
+          var url = card.getAttribute('data-' + k);
+          if (!url) return;
+          var a = document.createElement('a');
+          a.className = 'social-link';
+          a.href = url;
+          a.setAttribute('aria-label', name + ' on ' + LABEL[k]);
+          if (url !== '#') { a.target = '_blank'; a.rel = 'noopener'; }
+          a.innerHTML = ICON[k];
+          socialsBox.appendChild(a);
+        });
+
         open(teamModal);
       };
       card.addEventListener('click', show);

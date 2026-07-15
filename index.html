@@ -226,7 +226,7 @@
         <div class="grid grid-3">
           <!-- Swap each .avatar for a real headshot: <img class="avatar" src="…" alt="Name"> -->
           <article class="team-card" role="button" tabindex="0" aria-haspopup="dialog"
-            data-name="Emmanuel Bautista III" data-role="FOUNDER & CEO" data-img="assets/img/team/emmanuel.jpg"
+            data-name="Emmanuel Bautista III" data-role="FOUNDER & CEO" data-imgs="assets/img/team/emmanuel.jpg" data-li="#" data-fb="#" data-ig="#"
             data-bio="Emmanuel founded GIWU on one conviction - technology should give people their time back. He leads the vision and makes sure every system we build serves a real purpose.">
             <img class="avatar" src="assets/img/team/emmanuel.jpg" alt="" width="160" height="160" loading="lazy">
             <h3 class="team-name">Emmanuel Bautista III</h3>
@@ -234,7 +234,7 @@
             <span class="team-more">View profile &rarr;</span>
           </article>
           <article class="team-card" role="button" tabindex="0" aria-haspopup="dialog"
-            data-name="Edward Octavo" data-role="CHIEF TECHNOLOGY OFFICER" data-img="" data-initials="EO" data-avatar-class="avatar-2"
+            data-name="Edward Octavo" data-role="CHIEF TECHNOLOGY OFFICER" data-imgs="" data-initials="EO" data-avatar-class="avatar-2" data-li="#" data-fb="#" data-ig="#"
             data-bio="Edward architects the automations behind every GIWU project: connecting your tools, removing the manual work, and keeping everything running reliably.">
             <span class="avatar avatar-initials avatar-2" aria-hidden="true">EO</span>
             <h3 class="team-name">Edward Octavo</h3>
@@ -242,7 +242,7 @@
             <span class="team-more">View profile &rarr;</span>
           </article>
           <article class="team-card" role="button" tabindex="0" aria-haspopup="dialog"
-            data-name="Charles Keith Yerro" data-role="CHIEF MARKETING OFFICER" data-img="assets/img/team/charles.jpg"
+            data-name="Charles Keith Yerro" data-role="CHIEF MARKETING OFFICER" data-imgs="assets/img/team/charles.jpg" data-li="#" data-fb="#" data-ig="#"
             data-bio="Charles bridges GIWU's work and the businesses that need it, so the right teams discover how much time automation can give back.">
             <img class="avatar" src="assets/img/team/charles.jpg" alt="" width="160" height="160" loading="lazy">
             <h3 class="team-name">Charles Keith Yerro</h3>
@@ -346,10 +346,14 @@
   <div class="modal" id="team-modal" role="dialog" aria-modal="true" aria-labelledby="tm-name">
     <div class="modal-panel modal-team">
       <button class="modal-close" type="button" aria-label="Close">&times;</button>
-      <div class="tm-avatar" id="tm-avatar"></div>
+      <div class="tm-gallery">
+        <div class="tm-avatar" id="tm-avatar"></div>
+        <div class="tm-dots" id="tm-dots"></div>
+      </div>
       <h3 class="tm-name" id="tm-name"></h3>
       <span class="team-dept" id="tm-role"></span>
       <p class="tm-bio" id="tm-bio"></p>
+      <div class="tm-socials" id="tm-socials"></div>
       <a class="btn btn-gradient btn-lg tm-contact" href="mailto:info@giwusystems.com">Get in touch</a>
     </div>
   </div>
